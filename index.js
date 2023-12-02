@@ -1,11 +1,18 @@
 "use strict";
 
-//Condition 1 Graduated or Not
+const UM = "University of Medicine";
+const TU = "Technological University";
+const GTC = "Government Technological College";
+const CU = "University of Computer Studies";
+const Day = "Day Universities";
+const Distance = "Distance Universities";
+
+//Condition_1 Graduated or Not
 let question = confirm("Are you graduated?");
 if(question === false){
     alert("You're not allowed!");
 }else{
-    //Condition 2 Pass or Fail in subjects
+    //Condition_2 Pass or Fail in subjects
     let myan = confirm("Pass or Fail in Myanmar?");
     let eng = confirm("Pass or Fail in English?");
     let math = confirm("Pass or Fail in Mathematic?");
@@ -17,7 +24,7 @@ if(question === false){
         chem === false || phy === false || bio === false){
         alert("Fail");
     }else{
-        //Condition 3 Marks
+        //Condition_3 Marks
         let sub = 0;
         let total = 0;
         let invalid = false;
@@ -58,26 +65,41 @@ if(question === false){
         }else{
             alert(total);
             
-            //Condition 4 Universities
-            const UM = 500;
-            const TU = 450;
-            const GTC = 400;
-            const CU = 350;
-            const Day = 300;
-            const Distance = 240;
+            //Condition_4 Universities
 
-            if(total >= UM){
-                alert('Distance, Day, CU, GTC, TU, UM');
-            }else if (total >= TU){
-                alert('Distance, Day, CU, GTC, TU');
-            }else if (total >= GTC){
-                alert('Distance, Day, CU, GTC');
-            }else if (total >= CU){
-                alert('Distance, Day, CU');
-            }else if (total >= Day){
-                alert('Distance, Day');
+            if(total >= 500){
+                alert(`Available Universities List:
+                - ${UM}
+                - ${TU}
+                - ${GTC}
+                - ${CU}
+                - ${Day}
+                - ${Distance}`);
+            }else if (total >= 450){
+                alert(`Available Universities List:
+                - ${TU}
+                - ${GTC}
+                - ${CU}
+                - ${Day}
+                - ${Distance}`);
+            }else if (total >= 400){
+                alert(`Available Universities List:
+                - ${GTC}
+                - ${CU}
+                - ${Day}
+                - ${Distance}`);
+            }else if (total >= 350){
+                alert(`Available Universities List:
+                - ${CU}
+                - ${Day}
+                - ${Distance}`);
+            }else if (total >= 300){
+                alert(`Available Universities List:
+                - ${Day}
+                - ${Distance}`);
             }else{
-                alert('Distance');
+                alert(`Available University List:
+                - ${Distance}`);
             }
         }
     }
